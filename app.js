@@ -2,20 +2,27 @@ const startButton = document.getElementById('start-btn')
 const cardElement = document.getElementById('question-con')
 const questionElement = document.getElementById('question')
 const answerElement = document.getElementById('answer-btn')
+const nextButton = document.getElementById('next-btn')
 
-var shuffledArray;
+var shuffledArray, currentQuestionIndex;
 
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setQuestion()
+})
 
 function startGame() {
     startButton.classList.add('hide')
     cardElement.classList.remove('hide')
+    nextButton.classList.remove('hide')
     setQuestion()
 }
 
 function setQuestion() {
     shuffledArray = questions.sort(() => Math.random() - 0.5)
-    showQuestion(shuffledArray[0])
+    currentQuestionIndex = 0
+    showQuestion(shuffledArray[currentQuestionIndex])
 }
 
 function showQuestion(question) {
