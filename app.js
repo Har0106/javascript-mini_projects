@@ -20,16 +20,49 @@ function setQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerElement.appendChild(button)
+    })
+}
+
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+}
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct == 'true') {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 const questions = [
     {
         question: 'Inside which HTML element do we put the JavaScript?',
         answers: [
-            { text: '<scripting>', correct: 'false'},
-            { text: '<javascript>', correct: 'false'},
-            { text: '<script>', correct: 'true'},
-            { text: '<js>', correct: 'false'}
+            {text: '<scripting>', correct: 'false'},
+            {text: '<javascript>', correct: 'false'},
+            {text: '<script>', correct: 'true'},
+            {text: '<js>', correct: 'false'}
         ]
     }, 
     {
