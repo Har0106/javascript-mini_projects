@@ -20,6 +20,7 @@ function startGame() {
 }
 
 function setQuestion() {
+    resetState()
     shuffledArray = questions.sort(() => Math.random() - 0.5)
     currentQuestionIndex = 0
     showQuestion(shuffledArray[currentQuestionIndex])
@@ -60,6 +61,14 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
+}
+
+function resetState() {
+    clearStatusClass(document.body)
+    while (answerElement.firstChild) {
+        answerElement.removeChild
+        (answerElement.firstChild)
+    }
 }
 
 const questions = [
