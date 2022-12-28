@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap');
+
+body {
+    background-image: url("https://github.com/scrimba/learn-javascript/blob/main/1.%20Build%20a%20Passenger%20Counter%20App/2.%20Let's%20build%20a%20passenger%20counter%20app/station.jpg?raw=true");
+    background-size: cover;
+    text-align: center;
+    font-family: 'Open sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
