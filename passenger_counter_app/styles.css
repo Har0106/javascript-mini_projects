@@ -25,7 +25,7 @@ h1 {
 
 #count {
     font-size: 3rem;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 } 
 
 .btn {
@@ -47,8 +47,13 @@ h1 {
     color: white;
     background-color: hsl(145, 100%, 40%);
     border: solid 1px hsl(145, 100%, 20%);
+    margin-bottom: 30px;
 }
 
 .btn:hover {
     border: solid 1px black;
+}
+
+#entries {
+    font-weight: 700;
 }
