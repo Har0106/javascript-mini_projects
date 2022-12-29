@@ -12,6 +12,7 @@ nextButton.addEventListener('click', () => {
     setQuestion()
 })
 
+// to display the question container and next button
 function startGame() {
     startButton.classList.add('hide')
     cardElement.classList.remove('hide')
@@ -19,6 +20,7 @@ function startGame() {
     setQuestion()
 }
 
+// to select a random question
 function setQuestion() {
     resetState()
     shuffledArray = questions.sort(() => Math.random() - 0.5)
@@ -27,7 +29,9 @@ function setQuestion() {
 }
 
 function showQuestion(question) {
+    // to display the question
     questionElement.innerText = question.question
+    // to display the answers
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
@@ -40,6 +44,7 @@ function showQuestion(question) {
     })
 }
 
+// to get the selected answer
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -49,6 +54,7 @@ function selectAnswer(e) {
     })
 }
 
+// to check whether the answer is correct or wrong
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct == 'true') {
@@ -58,11 +64,13 @@ function setStatusClass(element, correct) {
     }
 }
 
+// to clear correct or wrong status before displaying the next question
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
+// to clear the answers before displaying the next question
 function resetState() {
     clearStatusClass(document.body)
     while (answerElement.firstChild) {
@@ -71,6 +79,7 @@ function resetState() {
     }
 }
 
+// list of questions and answers
 const questions = [
     {
         question: 'Inside which HTML element do we put the JavaScript?',
