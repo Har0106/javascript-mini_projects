@@ -31,6 +31,7 @@ body {
     height: 12%;
     font-size: 2rem;
     margin: 0.5%;
+    text-align: right;
 }
 
 #answer {
@@ -38,6 +39,7 @@ body {
     height: 12%;
     font-size: 2rem;
     background-color: white;
+    text-align: right;
 }
 
 .row {
@@ -53,4 +55,5 @@ button {
     background-color: #e5ecf3;
     margin: 0.5%;
     font-size: 1.2rem;
+    font-weight: 700;
 }
