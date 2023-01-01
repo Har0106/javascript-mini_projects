@@ -6,12 +6,22 @@ let hasBlackjack = false
 let isAlive = true
 let message = ""
 
-if (sum < 21) {
-    message = "Do you want to draw a new card?"
-} else if (sum == 21) {
-    hasBlackJack = true
-    message = "Wohoo! You've got Blackjack"
-} else {
-    isAlive = false
-    message = "You're out of the game"
+const messageEl = document.getElementById("message")
+const startGameButton = document.getElementById("start-game")
+const sumEl = document.getElementById("sum")
+
+startGameButton.addEventListener("click", startGame)
+
+function startGame() {
+    sumEl.innerText = "Sum: " + sum
+    if (sum < 21) {
+        message = "Do you want to draw a new card?"
+    } else if (sum == 21) {
+        hasBlackJack = true
+        message = "You've got Blackjack"
+    } else {
+        isAlive = false
+        message = "You're out of the game"
+    }
+    messageEl.innerText = message
 }
