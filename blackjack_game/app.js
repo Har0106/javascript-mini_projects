@@ -7,11 +7,14 @@ let isAlive = true
 let message = ""
 
 const messageEl = document.getElementById("message")
-const startGameButton = document.getElementById("start-game")
 const sumEl = document.getElementById("sum")
 const cardsEl = document.getElementById("cards")
 
+const startGameButton = document.getElementById("start-game")
+const newCardButton = document.getElementById("new-card")
+
 startGameButton.addEventListener("click", startGame)
+newCardButton.addEventListener("click", newCard)
 
 function startGame() {
     sumEl.innerText = "Sum: " + sum
@@ -26,4 +29,10 @@ function startGame() {
         message = "You're out of the game"
     }
     messageEl.innerText = message
+}
+
+function newCard() {
+    let anotherCard = 3
+    sum += anotherCard
+    startGame()
 }
