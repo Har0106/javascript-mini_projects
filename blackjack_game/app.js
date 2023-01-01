@@ -45,5 +45,5 @@ function newCard() {
 }
 
 function drawCard() {
-    return Math.floor(Math.random() * 12)
+    return Math.floor(Math.random() * 11 + 1)
 }
