@@ -11,19 +11,24 @@ startGameButton.addEventListener("click", startGame)
 newCardButton.addEventListener("click", newCard)
 
 function startGame() {
+    // initializing the variables when the game is started
     hasBlackjack = false
     isAlive = true
     message = ""
 
+    // drawing two random cards and storing their some on a variable
     firstCard = drawCard()
     secondCard = drawCard()
     sum = firstCard + secondCard
+
+    // displaying the sum and cards in the UI
     sumEl.innerText = "Sum: " + sum
     cardsEl.innerText = "Cards: " + firstCard + " " + secondCard
     showMessage()
 }
 
 function showMessage() {
+    // displaying the messages according to the sum of the cards drawn
     if (sum < 21) {
         message = "Do you want to draw a new card?"
     } else if (sum == 21) {
@@ -37,13 +42,17 @@ function showMessage() {
 }
 
 function newCard() {
+    // drawing a new card and adding it to the sum
     let anotherCard = drawCard()
     sum += anotherCard
-    cardsEl.innerText = cardsEl.innerText + " " + anotherCard
+
+    // displaying the new card and sum on the screen
+    cardsEl.innerText += " " + anotherCard
     sumEl.innerText = "Sum: " + sum
     showMessage()
 }
 
+// drawing a random card
 function drawCard() {
     return Math.floor(Math.random() * 11 + 1)
 }
