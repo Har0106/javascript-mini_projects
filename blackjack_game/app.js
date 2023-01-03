@@ -7,6 +7,9 @@ const cardsEl = document.getElementById("cards")
 const startGameButton = document.getElementById("start-game")
 const newCardButton = document.getElementById("new-card")
 
+// disabling newCardButton before the game starts
+newCardButton.disabled = true
+
 startGameButton.addEventListener("click", startGame)
 newCardButton.addEventListener("click", newCard)
 
@@ -20,6 +23,9 @@ function startGame() {
     firstCard = drawCard()
     secondCard = drawCard()
     sum = firstCard + secondCard
+
+    //enabling the newCardButton after game starts
+    newCardButton.disabled = false
 
     // displaying the sum and cards in the UI
     sumEl.innerText = "Sum: " + sum
