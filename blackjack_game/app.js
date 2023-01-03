@@ -48,14 +48,16 @@ function showMessage() {
 }
 
 function newCard() {
-    // drawing a new card and adding it to the sum
-    let anotherCard = drawCard()
-    sum += anotherCard
+    if (hasBlackjack === false && isAlive) {
+        // drawing a new card and adding it to the sum
+        let anotherCard = drawCard()
+        sum += anotherCard
 
-    // displaying the new card and sum on the screen
-    cardsEl.innerText += " " + anotherCard
-    sumEl.innerText = "Sum: " + sum
-    showMessage()
+        // displaying the new card and sum on the screen
+        cardsEl.innerText += " " + anotherCard
+        sumEl.innerText = "Sum: " + sum
+        showMessage()
+    }
 }
 
 // drawing a random card
