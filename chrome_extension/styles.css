@@ -1,0 +1,30 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 10px 0;
+    font-size: 1.3rem;
+    width: 70%;
+    border: 1px solid #5f9341;
+}
+
+button {
+    width: 20%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 10px 0;
+    margin: 20px;
+    border: none;
+    background-color: #5f9341;
+    color: white;
+}
+
+button:hover {
+    opacity: 80%;
+}
